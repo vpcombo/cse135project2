@@ -102,10 +102,9 @@ if(name!=null && age!=null && role!=null && state!=null)
 	{
 		String  SQL="INSERT INTO users (name, role, age, state) VALUES('"+name+"','"+role+"',"+age+",'"+state+"');";
 		try{Class.forName("org.postgresql.Driver");}catch(Exception e){System.out.println("Driver error");}
-		String url="jdbc:postgresql://127.0.0.1:5432/P1";
-		String user="postgres";
-		String password="880210";
-		conn =DriverManager.getConnection(url, user, password);
+		conn = DriverManager.getConnection(
+				"jdbc:postgresql://ec2-23-21-185-168.compute-1.amazonaws.com:5432/ddbj4k4uieorq7?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory",
+				"qwovydljafffgl", "cGdGZam7xcem_isgwfV3FQ_jxs");
 		stmt =conn.createStatement();
 		try{
 			conn.setAutoCommit(false);
